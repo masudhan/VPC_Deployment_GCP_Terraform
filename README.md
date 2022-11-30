@@ -19,5 +19,5 @@ Make changes to **terraform.tfvars** file accordinly
 `terraform plan`
 `terraform apply -auto-approve` 
 
-Goto VPC and verify the vpc and subnets :partyparrot:
+Goto VPC and verify the vpc and subnets :+1:
 There you go!!! :shipit:
