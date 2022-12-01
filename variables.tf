@@ -40,3 +40,50 @@ variable "vpc_name" {
 variable "vpc_mtu" {
     type = number  
 }
+
+variable "ingress-deny-snpp-firewall-rule" {
+  description = "ingress snpp deny firewall rule apply to all"
+  type = list(object({
+    name = string
+    cidr_block = list(string)
+    ports = list(string)
+    tcp_protocol = string
+    udp_protocol = string
+    priority = number
+  }))
+}
+
+variable "ingress-deny-ftp-firewall-rule" {
+  description = "ingress ftp deny firewall rule apply to all"
+  type = list(object({
+    name = string
+    cidr_block = list(string)
+    ports = list(string)
+    tcp_protocol = string
+    priority = number
+  }))
+}
+
+variable "allow-ssh-from-home-to-vpn-firewall-rule" {
+  description = "ingress tcp allow firewall rule apply to india-vpn"
+  type = list(object({
+    name = string
+    cidr_block = list(string)
+    ports = list(string)
+    tcp_protocol = string
+    priority = number
+    tags = list(string)
+  }))
+}
+
+variable "allow-ssh-for-all" {
+  description = "ingress tcp allow firewall rule apply to all"
+  type = list(object({
+    name = string
+    cidr_block = list(string)
+    ports = list(string)
+    tcp_protocol = string
+    priority = number
+    tags = list(string)
+  }))
+}
